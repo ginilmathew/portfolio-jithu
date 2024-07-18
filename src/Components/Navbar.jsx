@@ -8,18 +8,18 @@ const Navbar = () => {
           <h1>jithu</h1>
         </div>
         <div className="hidden md:flex h-[100%]  items-center justify-center" >
-          <ul className="flex gap-12 text-2xl font-bold text-[#fff] " >
+          <ul className="flex gap-12 text-lg font-bold text-[#fff] " >
             <li >
-              Home
+              <a href="#home">Home</a>
             </li>
             <li>
-              About
+              <a href="#skills">Skills</a>
             </li>
             <li>
-              Skills
+              <a href="#about">About</a>
             </li>
             <li>
-              Contact
+              <a href="#contact">Contact</a>
             </li>
 
           </ul>
