@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import About from '../Components/About'
 import Skills from '../Components/Skills'
 import Contact from '../Components/Contact'
+import axios from 'axios'
+import { BASE_URL } from '../../config'
 
 const HomeScreen = () => {
+    const [user, setUser] = useState([])
+    const [skill, setSkill] = useState([])
+
+    const getuser = async () => {
+        try {
+            const data = await axios.get(BASE_URL + '/api/user/alluser')
+            setUser(data.data.data)
+        } catch (err) {
+            console.log({ err })
+        }
+    }
+
+    const allskill = async () => {
+        try {
+            const skilldata = await axios.get(BASE_URL + '/api/skill/allskill')
+            setSkill(skilldata.data.data)
+        } catch (err) {
+            console.log({ err })
+        }
+    }
+
+    console.log({ user })
+    useEffect(() => {
+        getuser()
+        allskill()
+
+    }, [])
+
     return (
         <section id='home'>
             <>
@@ -16,9 +46,12 @@ const HomeScreen = () => {
                                 <h3 className='text-[#2ad87f] text-2xl py-6' >
                                     Hello everyone
                                 </h3>
-                                <h1 className='text-[#ffffff]  text-6xl font-bold tracking-wide'>
-                                    { "I'M Jithu " } <br /> Mathew
-                                </h1>
+                                <div className='w-96 ' >
+                                    <h1 className='text-[#ffffff]  text-6xl font-bold tracking-wide '>
+                                        { "I'M" }  { user[0]?.fullname?.toUpperCase() }
+                                    </h1>
+                                </div>
+
                                 <div className='bg-[#2ad87f] h-20 w-80 mt-14 flex justify-center items-center' >
                                     <div className='bg-[#1e242b] h-16 w-72 items-center justify-center flex ' >
                                         <h3 className='text-[#ffff] text-xl font-semibold' >
@@ -34,13 +67,13 @@ const HomeScreen = () => {
                     </div>
                 </div>
                 <div>
-                    <About />
+                    <About data={ user[0] } />
                 </div>
                 <div className='w-full'>
-                    <Skills />
+                    <Skills data={ skill } />
                 </div>
                 <div>
-                    <Contact />
+                    <Contact data={ user[0] } />
                 </div>
             </>
         </section>

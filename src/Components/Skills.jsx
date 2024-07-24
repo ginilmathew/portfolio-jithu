@@ -1,18 +1,9 @@
 import React from 'react'
 import SkillCards from './Common/SkillCards'
 
-function Skills () {
+function Skills ({ data }) {
 
-  const data = [{ id: 1, name: 'HTML', level: 'advance' },
-  { id: 2, name: 'CSS', level: 'Advance', },
-  { id: 3, name: 'Tailwind CSS', level: 'itermidate' },
-  { id: 4, name: 'Bootstrap', level: 'Advance' },
-  { id: 5, name: 'React', level: 'intermidate' },
-  { id: 6, name: 'Java Script', level: 'Advance' },
-  { id: 7, name: 'MongoDb', level: 'intermidate' },
-  { id: 8, name: 'Nodejs', level: 'intermidate' },
-  { id: 9, name: 'Express', level: 'intermidate' }
-  ]
+
 
   return (
     <section id="skills"  >
@@ -25,7 +16,7 @@ function Skills () {
         </div>
         <div className='w-2/3 bg-[#2ad87f]  justify-center flex items-center px-7 '>
           <div className='justify-center items-center gap-2 grid grid-cols-3 w-full ' >
-            { data.map((res) =>
+            { data?.map((res) =>
               <SkillCards data={ res } key={ res.id } />) }
           </div>
         </div>

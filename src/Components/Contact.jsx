@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Contact = () => {
+
+
+const Contact = ({ data }) => {
+
+
   return (
     <section id="contact">
       <div className='h-screen w-full flex' >
@@ -12,19 +16,19 @@ const Contact = () => {
         <div className='h-screen w-2/3 bg-[#1e242b] flex justify-center items-center flex-col' >
           <div className=' gap-4 flex flex-col' >
             <h1 className='text-[#ffffff]  text-6xl font-bold tracking-wide ' >
-              Jithu Mathew
+
+              { data?.fullname }
+            </h1>
+            <h1 className='text-[#ffffff] text-xl' >
+              { data?.email }
 
             </h1>
             <h1 className='text-[#ffffff] text-xl' >
-              githumathew19@gmail.com
+              { data?.phonenumber }
 
             </h1>
             <h1 className='text-[#ffffff] text-xl' >
-              8606831141
-
-            </h1>
-            <h1 className='text-[#ffffff] text-xl' >
-              Idukki,kerala
+              { data?.address }
 
             </h1>
           </div>

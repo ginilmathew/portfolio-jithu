@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import profile from '../../src/assets/photo.png'
 
-const About = () => {
+
+const About = ({ data }) => {
+
+
   return (
     <section id='about'>
       <div className='flex' >
@@ -21,9 +24,7 @@ const About = () => {
               About Me
             </h1>
             <p className='text-[#fff] py-9 ' >
-              I am passionate about front-end web development and continuously seek opportunities to enhance my skills and knowledge in the field. I am enthusiastic about creating intuitive user interfaces and staying up-to-date with the latest trends and technologies in web development. I am eager to contribute my expertise and grow professionally within a dynamic team environment.
-
-              By highlighting your internship experience, projects, skills, and education, you can demonstrate your readiness to take on a role as a frontend developer and showcase your potential to contribute effectively to a team.
+              { data?.about }
             </p>
             <div className='bg-[#2ad87f] h-16 w-48 flex justify-center items-center '>
               <button className='h-14 w-44 bg-[#1e242b]' >
