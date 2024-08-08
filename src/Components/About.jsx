@@ -1,43 +1,79 @@
 import React, { useEffect, useState } from 'react'
-import profile from '../../src/assets/photo.png'
+import Profile from '../../src/assets/photo.png'
 
 
-const About = ({ data }) => {
+// const About = ({ data }) => {
 
 
+//   return (
+//     <section id='about'>
+//       <div className='flex' >
+//         <div className='h-screen w-1/2 bg-[#1e242b] justify-center flex items-center'>
+//           <div className='h-64 w-64 bg-[#2ad87f] relative' >
+//             <div className='absolute left-3 bottom-3'>
+//               <img className=' h-72n w-64' src={ profile } />
+//             </div>
+
+
+
+//           </div>
+//         </div>
+//         <div className='h-screen w-1/2 bg-[#1e242b] justify-center flex items-center '>
+//           <div className='h-screen justify-center flex  flex-col w-2/3' >
+//             <h1 className='text-[#fff] text-5xl font-bold text-left' >
+//               About Me
+//             </h1>
+//             <p className='text-[#fff] py-9 ' >
+//               { data?.about }
+//             </p>
+//             <div className='bg-[#2ad87f] h-16 w-48 flex justify-center items-center '>
+//               <button className='h-14 w-44 bg-[#1e242b]' >
+
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+
+
+//   )
+// }
+
+// export default About
+
+const About = ({ data, profile }) => {
   return (
-    <section id='about'>
-      <div className='flex' >
-        <div className='h-screen w-1/2 bg-[#1e242b] justify-center flex items-center'>
-          <div className='h-64 w-64 bg-[#2ad87f] relative' >
+    <section id='about' className="bg-[#1e242b]">
+      <div className='flex flex-col md:flex-row'>
+        {/* Left Side: Image */}
+        <div className='md:w-1/2 w-full h-96 md:h-screen flex justify-center items-center'>
+          <div className='h-64 w-64 bg-[#2ad87f] relative'>
             <div className='absolute left-3 bottom-3'>
-              <img className=' h-72n w-64' src={ profile } />
+              <img className='h-72 w-64 object-cover' src={Profile} alt="Profile" />
             </div>
-
-
-
           </div>
         </div>
-        <div className='h-screen w-1/2 bg-[#1e242b] justify-center flex items-center '>
-          <div className='h-screen justify-center flex  flex-col w-2/3' >
-            <h1 className='text-[#fff] text-5xl font-bold text-left' >
+        
+        {/* Right Side: Content */}
+        <div className='md:w-1/2 w-full h-auto md:h-screen flex justify-center items-center p-6'>
+          <div className='w-full md:w-2/3'>
+            <h1 className='text-[#fff] text-4xl md:text-5xl font-bold text-left'>
               About Me
             </h1>
-            <p className='text-[#fff] py-9 ' >
-              { data?.about }
+            <p className='text-[#fff] py-6 md:py-9'>
+              {data?.about}
             </p>
-            <div className='bg-[#2ad87f] h-16 w-48 flex justify-center items-center '>
-              <button className='h-14 w-44 bg-[#1e242b]' >
-
+            <div className='bg-[#2ad87f] h-16 w-48 flex justify-center items-center'>
+              <button className='h-14 w-44 bg-[#1e242b] text-white font-semibold'>
+                Learn More
               </button>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-
   )
 }
 
-export default About
+export default About;
