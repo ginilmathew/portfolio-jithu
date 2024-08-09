@@ -11,7 +11,7 @@ import Profile from '../../src/assets/photo.png'
          <div className='h-screen w-1/2 bg-[#1e242b] justify-center flex items-center'>
            <div className='h-64 w-64 bg-[#2ad87f] relative' >
              <div className='absolute left-3 bottom-3'>
-               <img className=' h-72n w-64' src={ profile } />
+               <img className=' h-72n w-64' src={Profile } />
              </div>
 
 
