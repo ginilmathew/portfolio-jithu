@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Profile from '../../src/assets/photo.png'
-import resume from '../../src/assets/jithumathew.pdf'
+import resume from '../../src/assets/Jithumathew.pdf'
 
 
  const About = ({ data }) => {
@@ -9,9 +9,9 @@ import resume from '../../src/assets/jithumathew.pdf'
    return (
      <section id='about'>
        <div className='flex' >
-         <div className='h-screen w-1/2 bg-[#1e242b] justify-center flex items-center'>
-           <div className='h-64 w-64 bg-[#2ad87f] relative' >
-             <div className='absolute left-3 bottom-3'>
+         <div className='h-screen w-1/2 bg-[#1e242b] justify-center flex items-center '>
+           <div className='h-64 w-64 bg-[#2ad87f] relative ' >
+             <div className='absolute left-3 bottom-3 '>
                <img className=' h-72n w-64' src={Profile } />
              </div>
 
@@ -30,7 +30,7 @@ import resume from '../../src/assets/jithumathew.pdf'
              <div className='bg-[#2ad87f] h-16 w-48 flex justify-center items-center '>
                <button  className='h-14 w-44 bg-[#1e242b]' >
 <a href={resume} >
-  <h1 className='font-bold text-2xl text-[white]' >Resume</h1>
+  <h1 className='font-bold text-2xl text-[white] hover:text-green-300' >Resume</h1>
 </a>
                </button>
              </div>
