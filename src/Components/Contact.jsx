@@ -20,7 +20,11 @@ import React from 'react'
                {data?.fullname}
              </h1>
              <h1 className='text-[#ffffff] text-xl' >
-               {data?.email}
+             <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CrpPbDzJkmWtCZwhFqJpZWccMmrJCTzVQThntgQTZgbqwzCgtqPpMGptMxnNwZltSBBwmJVwbFqxckrNMWbV" 
+           class=" hover:text-green-200  text-lg">
+          {data?.email}
+        </a>
+              
 
              </h1>
              <h1 className='text-[#ffffff] text-xl' >
